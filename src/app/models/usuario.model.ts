@@ -7,7 +7,7 @@ export class Usuario{
     public img? : string,
     public role? : string,
     public uid? : string,
-    public token? : string
+
   ){}
 
 }
