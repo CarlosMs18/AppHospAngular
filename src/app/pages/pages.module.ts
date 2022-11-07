@@ -6,6 +6,7 @@ import { GraficasComponent } from './graficas/graficas.component';
 import { PagesComponent } from './pages.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { ProgressComponent } from './progress/progress.component';
 
 
 
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     DashboardComponent,
     AccountSettingsComponent,
     GraficasComponent,
-    PagesComponent
+    PagesComponent,
+    ProgressComponent
   ],
   imports: [
     CommonModule,

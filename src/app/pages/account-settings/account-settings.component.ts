@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountSettingsService } from 'src/app/services/account-settings.service';
 
 @Component({
   selector: 'app-account-settings',
@@ -8,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountSettingsComponent implements OnInit {
 
-  constructor() { }
+  /* public colorPrincipal  = document.querySelector('#theme') */
+
+  constructor(private accountSettings : AccountSettingsService) {
+
+   }
 
   ngOnInit(): void {
+
   }
+
+  seleccionarColor(color : string){
+
+    this.accountSettings.seleccionarColor(color)
+
+
+  }
+
 
 }
