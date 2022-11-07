@@ -8,10 +8,12 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { PagesModule } from './pages/pages.module';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+
   ],
   imports: [
     BrowserModule,

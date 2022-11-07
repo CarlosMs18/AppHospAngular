@@ -7,6 +7,7 @@ import { PagesComponent } from './pages.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { ProgressComponent } from './progress/progress.component';
+import { ComponentsModule } from '../components/components.module';
 
 
 
@@ -21,7 +22,8 @@ import { ProgressComponent } from './progress/progress.component';
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    ComponentsModule
   ]
 })
 export class PagesModule { }

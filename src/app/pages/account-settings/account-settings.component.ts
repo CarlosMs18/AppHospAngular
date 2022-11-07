@@ -9,7 +9,7 @@ import { AccountSettingsService } from 'src/app/services/account-settings.servic
 })
 export class AccountSettingsComponent implements OnInit {
 
-  /* public colorPrincipal  = document.querySelector('#theme') */
+
 
   constructor(private accountSettings : AccountSettingsService) {
 
