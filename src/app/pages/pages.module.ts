@@ -8,6 +8,10 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { ProgressComponent } from './progress/progress.component';
 import { ComponentsModule } from '../components/components.module';
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
+import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,11 +21,15 @@ import { ComponentsModule } from '../components/components.module';
     AccountSettingsComponent,
     GraficasComponent,
     PagesComponent,
-    ProgressComponent
+    ProgressComponent,
+    UsuariosComponent,
+    HospitalesComponent,
+    MedicosComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
     SharedModule,
     ComponentsModule
   ]

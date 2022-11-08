@@ -1,3 +1,6 @@
+import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
+import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
 import { AuthGuard } from './../guards/auth.guard';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -19,7 +22,12 @@ const routes: Routes = [
       {path : '',component : DashboardComponent, data : {title : 'Dashboard'}},
       {path : 'account-settings',component : AccountSettingsComponent, data : {title : 'Account-Settings'}},
       {path : 'graficas', component : GraficasComponent, data : {title : 'Graficas'}},
-      {path : 'progress',component : ProgressComponent, data : {title : 'Progress'}}
+      {path : 'progress',component : ProgressComponent, data : {title : 'Progress'}},
+
+      /* MANTENIMIENTO */
+      {path : 'usuarios' , component : UsuariosComponent , data : {title : 'Usuarios'}},
+      {path : 'medicos' , component : MedicosComponent , data : {title : 'Medicos'}},
+      {path : 'hospitales', component : HospitalesComponent, data  : {title : 'Hospitales'}}
     ]
   }
 

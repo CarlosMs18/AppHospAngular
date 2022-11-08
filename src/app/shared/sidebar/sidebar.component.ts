@@ -1,3 +1,4 @@
+import { UsuarioService } from './../../services/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SidebarService } from 'src/app/services/sidebar.service';
@@ -12,6 +13,7 @@ export class SidebarComponent implements OnInit {
 
   sideBar : any;
   constructor(private sidebarService : SidebarService,
+              private usuarioService : UsuarioService,
               private router : RouterModule) {
     this.sideBar = sidebarService.sideBarMenu;
 
@@ -20,4 +22,8 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  logout(){
+    this.usuarioService.logout()
+  }
 }
