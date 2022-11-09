@@ -1,5 +1,9 @@
+import { PipesModule } from './../pipes/pipes.module';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { GraficasComponent } from './graficas/graficas.component';
@@ -34,7 +38,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
-    ComponentsModule
+    ComponentsModule,
+    PipesModule
   ]
 })
 export class PagesModule { }
