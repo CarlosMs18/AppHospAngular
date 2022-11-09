@@ -1,3 +1,4 @@
+import { PerfilComponent } from './perfil/perfil.component';
 import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
 import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
@@ -24,10 +25,16 @@ const routes: Routes = [
       {path : 'graficas', component : GraficasComponent, data : {title : 'Graficas'}},
       {path : 'progress',component : ProgressComponent, data : {title : 'Progress'}},
 
+      /*Perfil*/
+      {path : 'perfil' , component : PerfilComponent , data : {title : 'Perfil'}},
+
       /* MANTENIMIENTO */
       {path : 'usuarios' , component : UsuariosComponent , data : {title : 'Usuarios'}},
       {path : 'medicos' , component : MedicosComponent , data : {title : 'Medicos'}},
-      {path : 'hospitales', component : HospitalesComponent, data  : {title : 'Hospitales'}}
+      {path : 'hospitales', component : HospitalesComponent, data  : {title : 'Hospitales'}},
+
+
+
     ]
   }
 

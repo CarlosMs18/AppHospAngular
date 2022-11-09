@@ -11,7 +11,8 @@ import { ComponentsModule } from '../components/components.module';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
 import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
 import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -24,11 +25,13 @@ import { FormsModule } from '@angular/forms';
     ProgressComponent,
     UsuariosComponent,
     HospitalesComponent,
-    MedicosComponent
+    MedicosComponent,
+    PerfilComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
     FormsModule,
     SharedModule,
     ComponentsModule

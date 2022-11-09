@@ -94,6 +94,18 @@ export class UsuarioService {
           )
   }
 
+  actualizarPerfil(data : {email : string, nombre : string , role : string}){
+    data = {
+      ...data,
+      role : this.usuario.role || ''
+    }
+
+    console.log(data)
+
+
+    return this.http.put(`${this.base_url}/usuarios/${this.uid}`, data, this.headers)
+  }
+
 
   eliminarUsuario(usuario :Usuario){
     return this.http.delete(`${this.base_url}/usuarios/${usuario.uid}`, this.headers)
