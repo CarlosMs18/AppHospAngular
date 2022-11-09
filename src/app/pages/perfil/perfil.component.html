@@ -32,7 +32,7 @@
 
                   <button type="submit"
                    class="btn btn-success btn-block waves-effect waves-light m-r-10"
-
+                 [disabled] ="perfilForm.invalid"
                    >Guardar Cambios
                       <i class="fa fa-save"></i>
                   </button>
@@ -45,17 +45,19 @@
               <div class="card-body">
                   <h4 class="card-title">Avatar</h4>
                   <h6 class="card-subtitle">Imagen del Usuario</h6>
-
+                  <img *ngIf="!imgTemp" [src]="usuario.imageUrl" class="img-avatar">
+                  <img *ngIf="imgTemp" [src]="imgTemp" class="img-avatar">
 
                   <input type="file"
-
+                    (change)="cambiarImagen($any($event.target).files[0])"
                   >
 
                   <br>
                   <br>
 
                   <button type="button"
-
+                  [disabled] ="!imagenSubir"
+                  (click)="subirImagen()"
                    class="btn btn-success btn-block waves-effect waves-light m-r-10">Cambiar Imagen
                       <i class="fa fa-save"></i>
                   </button>
