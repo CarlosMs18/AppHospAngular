@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col">
+  <div class="col-md-6">
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Medico</h4>
@@ -9,14 +9,14 @@
               (submit)="guardarMedico()"   >
 
               <div class="form-group row"
-
+                  *ngIf="medicoSeleccionado"
               >
 
 
                 <label for="exampleInputuname3" class="col-sm-3 control-label">Foto</label>
                 <div class="col-sm-9">
                     <div class="input-group">
-                        <img class="w100" alt="">
+                        <img class="w100" [src]="medicoSeleccionado.img!| imagen : 'medicos'">
                     </div>
                 </div>
             </div>
@@ -64,13 +64,15 @@
     </div>
   </div>
 
-  <div class="col" >
+  <div class="col animated fadeIn fast"
+   *ngIf="hospitalSeleccionado" > <!--el ngif va a ca porque al momento de cargar no existe un hopistal selecionado esto se activa
+                                                  con el valuechanges por ende ponemos el condicional si es que hay un hospital seleccionado-->
     <div class="card">
       <div class="card-body">
           <h4 class="card-title">Hospital</h4>
-          <h6 class="card-subtitle">Hospital ASignado</h6>
+          <h6 class="card-subtitle">{{hospitalSeleccionado.nombre}}</h6>
 
-          <img class="w100" alt="">
+          <img class="w100" alt="" [src]="hospitalSeleccionado.img! | imagen : 'hospitales' ">
       </div>
     </div>
 

@@ -23,6 +23,11 @@ export class MedicoService {
     }
   }
 
+  crearMedico(medico : {nombre : string, hospital : string}){
+      const url = `${this.base_url}/medicos`;
+      return this.http.post(url,medico, this.headers)
+  }
+
   cargarMedicos(){
     return this.http.get<{ok : boolean, medicos: Medico[]}>(`${this.base_url}/medicos` ,this.headers)
             .pipe(
@@ -31,4 +36,22 @@ export class MedicoService {
 
 
   }
+
+  obtenerMedicoporId(id : string){
+    const url = `${this.base_url}/medicos/${id}`;
+    return this.http.get(url, this.headers)
+            .pipe(
+              map((resp : {ok: boolean, medico : Medico}) => resp.medico)
+            )
+ }
+
+ actualizarMedico(medico : Medico){
+  const url = `${this.base_url}/medicos/${medico._id}`;
+  return this.http.put(url, medico, this.headers)
+ }
+
+ borrarMedico(_id : string){
+  const url = `${this.base_url}/medicos/${_id}`
+  return this.http.delete(url, this.headers)
+ }
 }

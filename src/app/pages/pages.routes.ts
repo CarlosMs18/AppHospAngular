@@ -30,11 +30,11 @@ const routes: Routes = [
       {path : 'perfil' , component : PerfilComponent , data : {title : 'Perfil'}},
 
       /* MANTENIMIENTO */
-      {path : 'usuarios' , component : UsuariosComponent , data : {title : 'Usuarios'}},
-      {path : 'medicos' , component : MedicosComponent , data : {title : 'Medicos'}},
-      {path : 'medico/nuevo', component : MedicoComponent , data : {title : 'Medico'}},
+      {path : 'usuarios' , component : UsuariosComponent , data : {title : 'Mantenimiento Usuarios'}},
+      {path : 'medicos' , component : MedicosComponent , data : {title : 'Mantenimiento Medicos'}},
+      {path : 'medico/:id', component : MedicoComponent , data : {title : 'Mantenimiento Medico'}},
 
-      {path : 'hospitales', component : HospitalesComponent, data  : {title : 'Hospitales'}},
+      {path : 'hospitales', component : HospitalesComponent, data  : {title : 'Mantenimiento Hospitales'}},
 
 
 
