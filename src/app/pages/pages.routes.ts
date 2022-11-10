@@ -1,3 +1,4 @@
+import { MedicoComponent } from './mantenimientos/medicos/medico.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
 import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
@@ -31,6 +32,8 @@ const routes: Routes = [
       /* MANTENIMIENTO */
       {path : 'usuarios' , component : UsuariosComponent , data : {title : 'Usuarios'}},
       {path : 'medicos' , component : MedicosComponent , data : {title : 'Medicos'}},
+      {path : 'medico/nuevo', component : MedicoComponent , data : {title : 'Medico'}},
+
       {path : 'hospitales', component : HospitalesComponent, data  : {title : 'Hospitales'}},
 
 

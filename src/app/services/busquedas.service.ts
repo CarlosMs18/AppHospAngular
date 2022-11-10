@@ -1,3 +1,4 @@
+import { Hospital } from 'src/app/models/hospital.model';
 import { Usuario } from 'src/app/models/usuario.model';
 import { map } from 'rxjs';
 import { environment } from './../../environments/environment';
@@ -25,13 +26,19 @@ export class BusquedasService {
     }
   }
 
+  private transformHospitales(resultados : any[]): Hospital[]{
+    return resultados.map(
+      hospital => new Hospital(hospital.nombre, hospital._id,hospital.img,hospital.usuario)
+    )
+  }
+
   private transformarUsuarios(resultados : any[]) : Usuario[]{
     return resultados.map(
       user => new Usuario(user.nombre, user.email, '',user.img , user.role, user.uid )
     )
   }
 
-  buscar(
+    buscar(
     tipo : 'usuarios' | 'medicos' | 'hospitales',
      termino : string){
 
@@ -42,6 +49,10 @@ export class BusquedasService {
               switch(tipo){
                 case 'usuarios' :
                   return this.transformarUsuarios(resp.resultados)
+
+                case 'hospitales':
+                  return this.transformHospitales(resp.resultados)
+
               }
             })
           )

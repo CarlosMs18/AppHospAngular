@@ -17,6 +17,8 @@ import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.comp
 import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PerfilComponent } from './perfil/perfil.component';
+import { MedicoComponent } from './mantenimientos/medicos/medico.component';
+
 
 
 
@@ -30,7 +32,9 @@ import { PerfilComponent } from './perfil/perfil.component';
     UsuariosComponent,
     HospitalesComponent,
     MedicosComponent,
-    PerfilComponent
+    PerfilComponent,
+    MedicoComponent,
+
   ],
   imports: [
     CommonModule,
