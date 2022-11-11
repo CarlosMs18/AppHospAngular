@@ -1,3 +1,4 @@
+import { SidebarService } from 'src/app/services/sidebar.service';
 import { Component, OnInit } from '@angular/core';
 import { AccountSettingsService } from '../services/account-settings.service';
 declare function customInitFunctions():void;
@@ -8,11 +9,14 @@ declare function customInitFunctions():void;
 })
 export class PagesComponent implements OnInit {
 
-  constructor(private accountSettings :AccountSettingsService) { }
+  constructor(private accountSettings :AccountSettingsService,
+            private SidebarService : SidebarService
+        ) { }
 
   ngOnInit(): void {
     customInitFunctions()
     this.accountSettings.inicializarColor();
+    this.SidebarService.cargarMenu()
   }
 
 }

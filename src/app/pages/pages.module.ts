@@ -18,6 +18,7 @@ import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PerfilComponent } from './perfil/perfil.component';
 import { MedicoComponent } from './mantenimientos/medicos/medico.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 
@@ -34,6 +35,7 @@ import { MedicoComponent } from './mantenimientos/medicos/medico.component';
     MedicosComponent,
     PerfilComponent,
     MedicoComponent,
+    BusquedaComponent,
 
   ],
   imports: [

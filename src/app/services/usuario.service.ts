@@ -28,6 +28,10 @@ export class UsuarioService {
     return localStorage.getItem('token') || '';
   }
 
+  get role() : 'ADMIN_ROLE' | 'USER_ROLE'{
+    return this.usuario.role;
+  }
+
   get headers(){
     return {
       headers : {
@@ -36,12 +40,17 @@ export class UsuarioService {
     }
   }
 
+  guardarLocalStorage(token : string, menu : any){
+    localStorage.setItem('token',token)
+    localStorage.setItem('menu',JSON.stringify(menu))
+  }
+
   login(data : loginForm){
     return this.http.post(`${this.base_url}/login`,data)
               .pipe(
                 tap(
                   ((resp : any) => {
-                    localStorage.setItem('token',resp.token)
+                    this.guardarLocalStorage(resp.token ,resp.menu)
                   })
                 )
               )
@@ -49,10 +58,11 @@ export class UsuarioService {
 
   logout(){
     localStorage.removeItem('token')
+    localStorage.removeItem('menu')
     this.router.navigateByUrl('/login');
   }
 
-  validarToken() /* : Observable<boolean> */ {
+    validarToken() /* : Observable<boolean> */ {
     return this.http.get(`${this.base_url}/login/renew`,{
 
         headers : {
@@ -63,7 +73,7 @@ export class UsuarioService {
 
             const {email, nombre, role, uid, img = ''} = resp.usuario;
             this.usuario  = new Usuario(nombre, email, '' , img, role,uid)
-            localStorage.setItem('token',resp.token)
+            this.guardarLocalStorage(resp.token ,resp.menu)
             return true
         }),
         catchError(error => of(false))
@@ -75,7 +85,7 @@ export class UsuarioService {
     return this.http.post(`${this.base_url}/usuarios`, data)
                     .pipe(
                       tap( (resp : any) => {
-                        localStorage.setItem('token',resp.token)
+                        this.guardarLocalStorage(resp.token ,resp.menu)
                       })
                     )
   }

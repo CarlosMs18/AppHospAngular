@@ -13,10 +13,10 @@ import { Usuario } from 'src/app/models/usuario.model';
 export class SidebarComponent implements OnInit {
   usuario !: Usuario;
   sideBar : any;
-  constructor(private sidebarService : SidebarService,
+  constructor(public  sidebarService : SidebarService,
               private usuarioService : UsuarioService,
               private router : RouterModule) {
-    this.sideBar = sidebarService.sideBarMenu;
+    /* this.sideBar = sidebarService.sideBarMenu; */
     this.usuario = this.usuarioService.usuario;
 
    }
